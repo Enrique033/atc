@@ -333,3 +333,43 @@ textarea {
     background-color: #5a32a3; /* Morado oscuro */
     transform: translateY(-3px);
 }
+
+.new-button-speech, 
+.new-button-logout {
+    padding: 10px 15px;
+    background-color: #26c749; /* Color azul */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.new-button-speech:hover,
+.new-button-logout:hover {
+    background-color: #24db24; /* Color azul más oscuro */
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+.new-button-speech:active,
+.new-button-logout:active {
+    transform: translateY(1px); /* Efecto de presión */
+}
+
+.new-button-speech i, 
+.new-button-logout i {
+    margin-right: 5px; /* Espacio entre el icono y el texto */
+}
+
+.new-button-logout {
+    background-color: #dc3545; /* Color rojo */
+}
+
+.new-button-logout:hover {
+    background-color: #c82333; /* Color rojo más oscuro */
+}
+

@@ -78,17 +78,46 @@ body{
     margin-bottom: 20px;
     margin-top: 5px;
 }
-.button{
+/* Estilo general para los botones */
+.button {
+    display: inline-block;
     width: 170px;
     height: 45px;
     font-size: 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;  
+    margin-top: 10px;
     background-color: #3AB397;  
-    color: white;
+    color: white; /* Cambia el color del texto a blanco */
+    text-decoration: none; /* Elimina el subrayado */
+    text-align: center; /* Centra el texto en el botón */
+    line-height: 45px; /* Asegura que el texto esté centrado verticalmente */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
+
+/* Efecto hover para el botón */
+.button:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Efecto de sombra más grande */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    background-color: #2A8B6B; /* Cambia el color de fondo al pasar el mouse */
+}
+
+/* Centrar el botón dentro de su contenedor */
+.sign-in .button,
+.sign-up .button {
+    display: block;
+    width: 40%; /* Se ajusta al tamaño del contenedor */
+    text-align: center;
+    margin: 0 auto; /* Centra el botón en su contenedor */
+}
+
+/* Ajustar el tamaño de la tipografía del texto en los botones */
+.button {
+    font-size: 16px;
+    font-weight: bold;
+}
+
 /*Animation form*/
 
 .sign-up{

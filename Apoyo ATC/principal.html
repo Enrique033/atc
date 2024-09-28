@@ -12,13 +12,15 @@
     <div class="top-buttons">
         <button id="toggle-mode-btn">Modo Claro</button>
         <button class="help-btn" onclick="toggleHelp()">Ayuda</button>
+        <button class="logout-button" onclick="location.href='../index.html'">Cerrar Sesión</button> <!-- Botón Cerrar Sesión -->
     </div>
 
- <!-- Añadir botones para redirigir a los proyectos de Apoyo ATC y CAB -->
- <div class="project-buttons">
-    <button class="new-button-1" onclick="location.href='Calidad%20de%20Red/index.html'">Calidad de Red</button>
-    <button class="new-button-2" onclick="location.href='Lista%20de%20CAB/index.html'">Lista de CAB</button>
-</div>
+    <!-- Añadir botones para redirigir a los proyectos de Apoyo ATC y CAB -->
+    <div class="project-buttons">
+        <button class="new-button-1" onclick="location.href='Calidad%20de%20Red/index.html'">Calidad de Red</button>
+        <button class="new-button-2" onclick="location.href='Lista%20de%20CAB/index.html'">Lista de CAB</button>
+        <button class="new-button-speech" onclick="location.href='speech/index.html'">Speechs</button> <!-- Botón Speechs -->
+    </div>    
 
     <div class="sidebar-buttons">
         <a href="https://drive.google.com/file/d/16e9OPdI-SE-E015JbKXH5TEoEgWXUwQX/view" target="_blank">Excel de Incidencias</a>
@@ -61,10 +63,10 @@
         </div>
 
         <div class="form-group" style="max-width: 700px; margin: 20px auto;">
-            <label for="text-to-change">Texto para Formatear:</label>
+            <label for="text-to-change">Cambiar Texto Mayúscula - Minúscula</label>
             <textarea id="text-to-change" rows="3"></textarea>
             <div class="align-buttons" style="margin-top: 10px;">
-                <button class="generate-btn" onclick="copyTransformedText()">Copiar Texto Formateado</button>
+                <button class="generate-btn" onclick="copyTransformedText()">Copiar Texto Cambiado</button>
             </div>
         </div>
     </div>
@@ -103,5 +105,3 @@
     <script src="principal.js"></script>
 </body>
 </html>
-
-

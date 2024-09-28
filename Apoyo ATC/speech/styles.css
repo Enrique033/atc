@@ -244,3 +244,24 @@ h2 {
     border-radius: 10px; /* Bordes redondeados */
     margin-top: 15px; /* Margen superior */
 }
+
+.return-button {
+    position: absolute;
+    top: 20px; /* Ajusta la distancia desde la parte superior */
+    right: 20px; /* Ajusta la distancia desde la parte derecha */
+    background-color: #ff6666; /* Color rojizo claro */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.return-button:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Brillo más intenso */
+    transform: scale(1.05); /* Efecto de agrandamiento */
+    background-color: #ff4d4d; /* Color ligeramente más oscuro al pasar el mouse */
+}
