@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoyo Gestión 123</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="manifest" href="/manifest.json"> <!-- Enlace al manifiesto -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50;
+            color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .top-buttons {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+        .top-buttons button,
+        .help-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .top-buttons button.dark-mode,
+        .help-btn.dark-mode {
+            background-color: #343a40;
+            color: #fff;
+        }
+        .top-buttons button:hover,
+        .help-btn:hover {
+            background-color: #0056b3; /* Azul oscuro */
+            transform: translateY(-3px);
+        }
+        .container {
+            max-width: 700px;
+            margin: 80px auto;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            color: #333;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .container.dark-mode {
+            background-color: #495057;
+            color: #f8f9fa;
+        }
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        textarea {
+            resize: vertical; /* Permitir el redimensionamiento solo vertical */
+        }
+        #imported-text {
+            height: 300px; /* Ajustado el tamaño vertical */
+            width: 100%; /* Ajustado el tamaño horizontal */
+            font-size: 16px;
+            white-space: pre-wrap; /* Mantener saltos de línea */
+        }
+        #imported-text.dark-mode {
+            background: #6c757d;
+            color: #f8f9fa;
+            border-color: #495057;
+        }
+        .generate-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: #fff;
+            font-weight: bold;
+            background-color: #ffc107;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .generate-btn.dark-mode {
+            background-color: #007bff;
+        }
+        .generate-btn:hover {
+            background-color: #e0a800; /* Amarillo oscuro */
+            transform: translateY(-3px);
+        }
+        .footer {
+            position: relative;
+            padding: 20px;
+            background-color: #343a40;
+            color: #f8f9fa;
+            text-align: center;
+            box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
+            margin-top: auto;
+        }
+        .footer .social-icons {
+            margin-top: 10px;
+        }
+        .footer .social-icons a {
+            color: #fff;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .footer .social-icons a:hover {
+            color: #25d366; /* Color verde para WhatsApp */
+        }
+        .footer .social-icons a[title="Gmail"]:hover {
+            color: #d93025; /* Color rojo para Gmail */
+        }
+        .help {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 320px;
+            background: #343a40; /* Fondo gris oscuro */
+            color: #f8f9fa; /* Texto blanco */
+            border: 1px solid #495057; /* Borde gris oscuro */
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .help h3 {
+            margin: 0 0 15px;
+            font-size: 18px;
+        }
+        .help p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .help button {
+            display: block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .help button.dark-mode {
+            background-color: #495057;
+        }
+        .help button:hover {
+            background-color: #0056b3; /* Azul oscuro */
+            transform: translateY(-3px);
+        }
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            display: none;
+            font-size: 14px;
+            z-index: 1000;
+            transition: opacity 0.3s ease;
+        }
+        .notification.show {
+            display: block;
+            opacity: 1;
+        }
+        .file-import {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #ffffff;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .file-import textarea {
+            height: 300px; /* Ajustado el tamaño vertical */
+            width: 100%; /* Ajustado el tamaño horizontal */
+            margin-top: 10px;
+            resize: vertical; /* Permitir el redimensionamiento solo vertical */
+        }
+        .sidebar-buttons {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+        .sidebar-buttons a {
+            display: block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            color: #fff;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .sidebar-buttons a:nth-child(1) {
+            background-color: #007bff; /* Azul */
+        }
+        .sidebar-buttons a:nth-child(2) {
+            background-color: #28a745; /* Verde */
+        }
+        .sidebar-buttons a:nth-child(3) {
+            background-color: #ffc107; /* Amarillo */
+        }
+        .sidebar-buttons a:nth-child(4) {
+            background-color: #dc3545; /* Rojo */
+        }
+        .sidebar-buttons a:hover {
+            transform: translateY(-3px);
+        }
+        .sidebar-buttons a:nth-child(1):hover {
+            background-color: #0056b3; /* Azul oscuro */
+        }
+        .sidebar-buttons a:nth-child(2):hover {
+            background-color: #218838; /* Verde oscuro */
+        }
+        .sidebar-buttons a:nth-child(3):hover {
+            background-color: #e0a800; /* Amarillo oscuro */
+        }
+        .sidebar-buttons a:nth-child(4):hover {
+            background-color: #c82333; /* Rojo oscuro */
+        }
+        .speech-section {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .speech-block {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .speech-block:hover {
+            background-color: #e2e6ea;
+            transform: translateY(-3px);
+        }
+        .speech-block p {
+            margin: 0;
+            font-size: 16px;
+        }
+        .speech-block.dark-mode {
+            background-color: #6c757d;
+            border-color: #495057;
+        }
+        .speech-block.dark-mode p {
+            color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-buttons">
+        <button id="toggle-mode-btn">Modo Claro</button>
+        <button class="help-btn" onclick="toggleHelp()">Ayuda</button>
+    </div>
+
+    <div class="sidebar-buttons">
+        <a href="https://drive.google.com/file/d/16e9OPdI-SE-E015JbKXH5TEoEgWXUwQX/view" target="_blank">Excel de Incidencias</a>
+        <a href="https://drive.google.com/uc?id=1-10Nb7yEY0duq59DoQ2eZ8MuUVQBqo_u&export=download" target="_blank">Excel de Calidad de Red</a>
+        <a href="https://drive.google.com/file/d/1107wsIjNILbIFbAa-5bYktum8L35pH5e/view" target="_blank">Excel de Reclamos</a>
+        <a href="https://drive.google.com/uc?id=1V9yusCloz3nHGpD1jERL5wu_j0Gu5mhu&export=download" target="_blank">Excel de Lista de CAB</a>
+    </div>
+
+    <div class="container">
+        <h1>Generador de Resultado de Llamada</h1>
+
+        <div class="form-group">
+            <label for="client-number">Número:</label>
+            <input type="text" id="client-number" placeholder="Ingrese el número del cliente">
+        </div>
+
+        <div class="form-group">
+            <label for="client-query">Consulta:</label>
+            <input type="text" id="client-query" placeholder="Ingrese la consulta del cliente">
+        </div>
+
+        <div class="form-group">
+            <label for="response">Respuesta:</label>
+            <input type="text" id="response" placeholder="Ingrese la respuesta">
+        </div>
+
+        <div class="form-group">
+            <label for="call-code">Código:</label>
+            <input type="text" id="call-code" placeholder="Ingrese el código" value="$$__&&">
+        </div>
+
+        <div class="form-group">
+            <button class="generate-btn" onclick="generateResult()">Generar Resultado y Copiar</button>
+        </div>
+
+        <div class="file-import">
+            <label for="file-input">Importar Archivo de Texto:</label>
+            <input type="file" id="file-input" accept=".txt" onchange="handleFileUpload(event)">
+            <textarea id="imported-text" readonly></textarea>
+        </div>
+
+        <div class="form-group" style="max-width: 700px; margin: 20px auto;">
+            <label for="text-to-change">Texto para Formatear:</label>
+            <textarea id="text-to-change" rows="3"></textarea>
+            <div class="align-buttons" style="margin-top: 10px;">
+                <button class="generate-btn" onclick="copyTransformedText()">Copiar Texto Formateado</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="speech-section">
+        <h2>Speech Facturación</h2>
+        <div class="speech-block" onclick="copySpeech(1)">
+            <p>(Nombre del cliente), si tiene más dudas sobre su facturación le invitamos a realizarlo por nuestro canal de WhatsApp, le enviaré un SMS con el link de acceso directo para una atención personalizada y rápida.</p>
+        </div>
+        <div class="speech-block" onclick="copySpeech(2)">
+            <p>(Nombre del cliente), puedes seguir consultando sobre tu facturación a través de nuestro canal de WhatsApp Bitel, ingresando al siguiente enlace: <a href="http://bit.ly/3rIo3dG" target="_blank">http://bit.ly/3rIo3dG</a>. Dale en enviar y uno de nuestros asesores te responderá a la brevedad.</p>
+        </div>
+        <div class="speech-block" onclick="copySpeech(3)">
+            <p>También puedes visualizar esta información ingresando a la sección “MI BITEL” de nuestra página web o descargando nuestra app MI BITEL.</p>
+        </div>
+    </div>
+
+    <div class="help">
+        <h3>Guía de Uso</h3>
+        <p><strong>Número:</strong> Ingrese el número del cliente.</p>
+        <p><strong>Consulta:</strong> Escriba la consulta del cliente.</p>
+        <p><strong>Respuesta:</strong> Escriba la respuesta que se dará al cliente.</p>
+        <p><strong>Código:</strong> Ingrese el código de llamada manualmente.</p>
+        <button onclick="toggleHelp()">Cerrar</button>
+    </div>
+
+    <footer class="footer">
+        <div>Desarrollado por © Elvis Sebastián 2024</div>
+        <div class="social-icons">
+            <a href="https://wa.me/966766495" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:elvissebas39@gmail.com" title="Gmail"><i class="fab fa-google"></i></a>
+        </div>
+    </footer>
+
+    <div id="notification" class="notification"></div>
+
+    <script>
+        let isDarkMode = false;
+        const toggleModeBtn = document.getElementById('toggle-mode-btn');
+        const container = document.querySelector('.container');
+        const importedText = document.getElementById('imported-text');
+        const helpBox = document.querySelector('.help');
+        const notification = document.getElementById('notification');
+
+        toggleModeBtn.addEventListener('click', () => {
+            isDarkMode = !isDarkMode;
+            document.body.classList.toggle('dark-mode', isDarkMode);
+            container.classList.toggle('dark-mode', isDarkMode);
+            importedText.classList.toggle('dark-mode', isDarkMode);
+            helpBox.classList.toggle('dark-mode', isDarkMode);
+            const speechBlocks = document.querySelectorAll('.speech-block');
+            speechBlocks.forEach(block => block.classList.toggle('dark-mode', isDarkMode));
+            toggleModeBtn.textContent = isDarkMode ? 'Modo Claro' : 'Modo Oscuro';
+        });
+
+        function toggleHelp() {
+            helpBox.style.display = helpBox.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            if (file && file.type === 'text/plain') {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    importedText.value = e.target.result;
+                    importedText.removeAttribute('readonly'); // Permitir edición
+                };
+                reader.readAsText(file);
+            } else {
+                alert('Por favor, suba un archivo de texto.');
+            }
+        }
+
+        function capitalizeText(text) {
+            return text
+                .toLowerCase()
+                .split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ');
+        }
+
+        function showNotification(message) {
+            notification.textContent = message;
+            notification.classList.add('show');
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 2000); // Muestra la notificación por 2 segundos
+        }
+
+        function copyTransformedText() {
+            const textArea = document.getElementById('text-to-change');
+            textArea.value = capitalizeText(textArea.value);
+            textArea.select();
+            document.execCommand('copy');
+            showNotification('Texto copiado al portapapeles.');
+        }
+
+        function generateResult() {
+            const clientNumber = document.getElementById('client-number').value || 'Número no ingresado';
+            const clientQuery = document.getElementById('client-query').value || 'cliente no realiza consulta';
+            const response = document.getElementById('response').value || 'cliente finaliza llamada';
+            const callCode = document.getElementById('call-code').value || '$$__&&';
+
+            const result = `${clientNumber} // ${clientQuery} // ${response} // ${callCode}`;
+            const resultElement = document.createElement('textarea');
+            resultElement.value = result;
+            document.body.appendChild(resultElement);
+            resultElement.select();
+            document.execCommand('copy');
+            document.body.removeChild(resultElement);
+            showNotification('Resultado generado y copiado al portapapeles.');
+        }
+
+        function copySpeech(number) {
+            const speechTexts = [
+                '(Nombre del cliente), si tiene más dudas sobre su facturación le invitamos a realizarlo por nuestro canal de WhatsApp, le enviaré un SMS con el link de acceso directo para una atención personalizada y rápida.',
+                '(Nombre del cliente), puedes seguir consultando sobre tu facturación a través de nuestro canal de WhatsApp Bitel, ingresando al siguiente enlace: http://bit.ly/3rIo3dG. Dale en enviar y uno de nuestros asesores te responderá a la brevedad.',
+                'También puedes visualizar esta información ingresando a la sección “MI BITEL” de nuestra página web o descargando nuestra app MI BITEL.'
+            ];
+            const textToCopy = speechTexts[number - 1];
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = textToCopy;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+            showNotification('Texto copiado al portapapeles.');
+        }
+    </script>
+</body>
+</html>

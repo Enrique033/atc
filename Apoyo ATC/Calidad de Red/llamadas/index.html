@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Configuraciones de Llamadas</title>
+</head>
+<body>
+    <header>
+        <h1>Configuraciones de Llamadas</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Problemas con Llamadas</h2>
+
+        <h3>No Recibe Llamadas</h3>
+        <p id="mensaje-no-recibe">Estimado realizar la siguiente marcación: Desvío de llamada <strong>##002#</strong> + tecla de llamar y si tienes inconvenientes para recibir llamadas: <strong>#35*000#</strong> + tecla de llamar.</p>
+        <button class="copiar-btn" data-code="##002#">Copiar Código Desvío</button>
+        <button class="copiar-btn" data-code="#35*000#">Copiar Código No Recepción</button>
+        <button onclick="copiarTexto('mensaje-no-recibe', 'sms')">Copiar Mensaje</button>
+
+        <h3>No Realiza Llamadas</h3>
+        <p id="mensaje-no-realiza">Estimado cliente, realizar la siguiente marcación si tienes inconvenientes para llamar: <strong>#33*0000#</strong> + tecla llamar.</p>
+        <button onclick="copiarTexto('mensaje-no-realiza', 'sms')">Copiar Mensaje</button>
+
+        <h3>Pedido por No Recepción de Llamadas</h3>
+        <pre id="plantilla-no-llamadas">
+N° DEL QUE LLAMA // CONSULTA // RESPUESTA
+Tipo de solicitante: (Titular/Usuario)
+Nombre del solicitante:
+Tipo de doc. De identidad:
+N° de documento de identidad:
+Forma de validación de identidad: Consultas de validación (vía telefónica)
+Fecha y hora de inicio de no tener servicio:
+Monto pagado:
+Fecha de pago:
+Canal de pago:
+Indicador de Cobertura:
+Adjunta comprobante de pago: SI / NO
+Tipo de comprobante adjunto:
+        </pre>
+        <button onclick="copiarTexto('plantilla-no-llamadas', 'plantilla')">Copiar Plantilla</button>
+
+        <h3>Speech</h3>
+        <p id="speech-llamadas">(Nombre) le confirmamos que hemos recibido y registrado su pedido con el código XXXX. El plazo estimado de atención es de 3 días calendarios. Nuestra respuesta será enviada vía SMS en 1 día hábil luego del plazo de atención.</p>
+
+        <!-- Nueva sección añadida: Pedido para líneas portadas -->
+        <h3>Pedido para Líneas Portadas</h3>
+        <pre id="plantilla-portadas">
+N° DEL QUE LLAMA // CONSULTA // RESPUESTA
+Tipo de solicitante: (Titular/Usuario)
+Nombre del solicitante:
+Tipo de doc. De identidad:
+N° de documento de identidad:
+Forma de validación de identidad: Consultas de validación (vía telefónica):
+Fecha de la portabilidad:
+Canal en la que solicitó la portabilidad:
+Código de operación de portabilidad:
+Empresa operadora de origen:
+        </pre>
+        <button onclick="copiarTexto('plantilla-portadas', 'plantilla')">Copiar Plantilla</button>
+
+        <h3>Speech para Pedido de Líneas Portadas</h3>
+        <p id="speech-portadas">(Nombre), le confirmamos que hemos recibido y registrado su pedido con el código XXXX. El plazo estimado de atención es de 3 días calendarios. Nuestra respuesta será enviada vía SMS en 1 día hábil luego del plazo de atención.</p>
+
+        <!-- Mensaje de confirmación -->
+        <div id="confirmacion-copiar" class="hidden">Texto copiado al portapapeles</div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Soporte Técnico</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

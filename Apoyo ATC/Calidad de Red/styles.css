@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Fondo morado a azul degradado */
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1); /* Fondo del encabezado semitransparente */
+    color: white;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.4em;
+    margin-top: 10px;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15); /* Fondo del main semitransparente */
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.service-button {
+    background-color: #ff6b81; /* Color suave para botones (rosa claro) */
+    color: white;
+    padding: 15px;
+    font-size: 1.3em;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.service-button:hover {
+    background-color: #ff4b60; /* Color más oscuro al pasar el mouse */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.feedback {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: none;
+    color: #333;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #ddd;
+    padding: 15px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    .service-button {
+        font-size: 1em;
+        padding: 12px;
+    }
+
+    main {
+        padding: 15px;
+    }
+}
+/* Botón para volver a la página principal */
+.back-button-container {
+    position: absolute; /* Posiciona el contenedor en relación al main */
+    top: 20px; /* Espaciado desde el borde superior */
+    right: 20px; /* Espaciado desde el borde derecho */
+    z-index: 10; /* Asegura que esté encima de otros elementos */
+}
+
+.back-button {
+    background-color: #ff6b81; /* Color suave para el botón (rosa claro) */
+    color: white;
+    padding: 10px 15px;
+    font-size: 1em; /* Tamaño de fuente consistente */
+    border-radius: 50px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    border: none; /* Sin borde */
+}
+
+.back-button:hover {
+    background-color: #ff4b60; /* Color más oscuro al pasar el mouse */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+

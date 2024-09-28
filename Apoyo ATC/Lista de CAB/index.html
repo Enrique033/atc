@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centros de Atención Bitel (CAB)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Centros de Atención Bitel (CAB)</h1>
+
+    <!-- Filtros por Departamento, Provincia y Distrito -->
+    <div id="filters">
+        <label for="departamento-filter">Departamento:</label>
+        <select id="departamento-filter">
+            <option value="">Todos</option>
+        </select>
+
+        <label for="provincia-filter">Provincia:</label>
+        <select id="provincia-filter" disabled>
+            <option value="">Todos</option>
+        </select>
+
+        <label for="distrito-filter">Distrito:</label>
+        <select id="distrito-filter" disabled>
+            <option value="">Todos</option>
+        </select>
+    </div>
+
+    <div class="back-button-container">
+        <button class="back-button" onclick="location.href='../principal.html'">Volver a la Página Principal</button>
+    </div>
+
+    <!-- Tabla con los datos -->
+<table id="cab-table">
+  <thead>
+    <tr>
+      <th>N°</th>
+      <th>Tipo</th>
+      <th>Departamento</th>
+      <th>Provincia</th>
+      <th>Distrito</th>
+      <th>Dirección Exacta</th>
+      <th>Lunes a Viernes</th>
+      <th>Sábado</th>
+      <th>Domingo</th>
+      <th>Feriados</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>CAB DEALER</td>
+      <td>AMAZONAS</td>
+      <td>UTCUBAMBA</td>
+      <td>BAGUA GRANDE</td>
+      <td>AV. CHACHAPOYAS N° 2295</td>
+      <td>9:00 - 20:00</td>
+      <td>9:00 - 20:00</td>
+      <td>10:00 - 17:00</td>
+      <td>10:00 - 17:00</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>CAB DEALER</td>
+      <td>CAJAMARCA</td>
+      <td>JAEN</td>
+      <td>JAEN</td>
+      <td>CALLE SAN MARTÍN N° 1567</td>
+      <td>8:00 - 20:00</td>
+      <td>8:00 - 20:00</td>
+      <td>10:00 - 17:00</td>
+      <td>10:00 - 17:00</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>CAB DEALER</td>
+      <td>AMAZONAS</td>
+      <td>CHACHAPOYAS</td>
+      <td>CHACHAPOYAS</td>
+      <td>JR. AYACUCHO N° 1037</td>
+      <td>9:00 - 20:00</td>
+      <td>9:00 - 20:00</td>
+      <td>10:00 - 17:00</td>
+      <td>10:00 - 17:00</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>CAB DEALER</td>
+      <td>CAJAMARCA</td>
+      <td>JAEN</td>
+      <td>JAEN</td>
+      <td>CALLE MARISCAL URETA N° 1380</td>
+      <td>9:00 - 20:00</td>
+      <td>9:00 - 20:00</td>
+      <td>10:00 - 17:00</td>
+      <td>10:00 - 17:00</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>CAB DEALER</td>
+      <td>AMAZONAS</td>
+      <td>CHACHAPOYAS</td>
+      <td>CHACHAPOYAS</td>
+      <td>JR. AMAZONAS N° 931 (PRIMER PISO)</td>
+      <td>9:00 - 20:00</td>
+      <td>9:00 - 20:00</td>
+      <td>10:00 - 17:00</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>CAB DEALER</td>
+      <td>AMAZONAS</td>
+      <td>BAGUA</td>
+      <td>BAGUA</td>
+      <td>AV. HÉROES DE CENEPA N° 1185</td>
+      <td>9:00 - 20:00</td>
+      <td>9:00 - 20:00</td>
+      <td>10:00 - 17:00</td>
+      <td>10:00 - 17:00</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>CAB DEALER</td>
+      <td>CAJAMARCA</td>
+      <td>JAEN</td>
+      <td>JAEN</td>
+      <td>AV. MESONES MURO N° 349 SEC MORRO SOLAR</td>
+      <td>9:00 - 20:00</td>
+      <td>9:00 - 20:00</td>
+      <td>10:00 - 17:00</td>
+      <td>10:00 - 17:00</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>CAB DEALER</td>
+      <td>AMAZONAS</td>
+      <td>UTCUBAMBA</td>
+      <td>BAGUA GRANDE</td>
+      <td>AV. CHACHAPOYAS N° 2005</td>
+      <td>9:00 - 20:00</td>
+      <td>9:00 - 20:00</td>
+      <td>10:00 - 17:00</td>
+      <td>10:00 - 17:00</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>CAB DEALER</td>
+      <td>CAJAMARCA</td>
+      <td>JAEN</td>
+      <td>JAEN</td>
+      <td>AV. MARISCAL CASTILLA N° 354</td>
+      <td>8:00 - 20:00</td>
+      <td>8:00 - 20:00</td>
+      <td>10:00 - 17:00</td>
+      <td>10:00 - 17:00</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>CAB DEALER</td>
+      <td>CAJAMARCA</td>
+      <td>SAN IGNACIO</td>
+      <td>SAN IGNACIO</td>
+      <td>AV. SAN IGNACIO N° 168</td>
+      <td>8:00 - 20:00</td>
+      <td>8:00 - 20:00</td>
+      <td>10:00 - 17:00</td>
+      <td>10:00 - 17:00</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>PDVA</td>
+      <td>CAJAMARCA</td>
+      <td>JAEN</td>
+      <td>CHONTALI</td>
+      <td>CALLE UNIÓN N° 234</td>
+      <td>9:00 - 20:00</td>
+      <td>9:00 - 20:00</td>
+      <td>10:00 - 17:00</td>
+      <td>10:00 - 17:00</td>
+    </tr>
+	<tr>
+  <td>12</td>
+  <td>PDVA</td>
+  <td>AMAZONAS</td>
+  <td>CONDORCANQUI</td>
+  <td>NIEVA</td>
+  <td>CALLE AMAZONAS N° 105</td>
+  <td>9:00 - 20:00</td>
+  <td>9:00 - 20:00</td>
+  <td>10:00 - 17:00</td>
+  <td>10:00 - 17:00</td>
+</tr>
+<tr>
+  <td>13</td>
+  <td>PDVA</td>
+  <td>AMAZONAS</td>
+  <td>BONGARA</td>
+  <td>FLORIDA</td>
+  <td>JR. RIOBAMBA CUADRA 5, BARRIO SAN LUCAS</td>
+  <td>8:30 - 20:00</td>
+  <td>8:30 - 20:00</td>
+  <td>9:30 - 17:00</td>
+  <td></td>
+</tr>
+<tr>
+  <td>14</td>
+  <td>PDVA</td>
+  <td>CAJAMARCA</td>
+  <td>SAN IGNACIO</td>
+  <td>HUARANGO</td>
+  <td>CALLE JUAN VELASCO ALVARADO N° 105, CENTRO POBLADO PUERTO CIRUELO</td>
+  <td>8:00 - 20:00</td>
+  <td>8:00 - 20:00</td>
+  <td>9:00 - 17:00</td>
+  <td>9:00 - 17:00</td>
+</tr>
+<tr>
+  <td>15</td>
+  <td>PDVA</td>
+  <td>AMAZONAS</td>
+  <td>BAGUA</td>
+  <td>IMAZA</td>
+  <td>CALLE AMAZONAS N° 471, CENTRO POBLADO IMACITA</td>
+  <td>8:00 - 20:00</td>
+  <td>8:00 - 20:00</td>
+  <td>8:00 - 17:00</td>
+  <td>8:00 - 17:00</td>
+</tr>
+<tr>
+  <td>16</td>
+  <td>PDVA</td>
+  <td>AMAZONAS</td>
+  <td>BAGUA</td>
+  <td>IMAZA</td>
+  <td>AV. PRINCIPAL N° 11 CENTRO POBLADO CHIRIACO</td>
+  <td>8:30 - 20:00</td>
+  <td>8:30 - 20:00</td>
+  <td>8:30 - 20:00</td>
+  <td>8:30 - 20:00</td>
+</tr>
+<tr>
+  <td>17</td>
+  <td>PDVA</td>
+  <td>AMAZONAS</td>
+  <td>RODRIGUEZ DE MENDOZA</td>
+  <td>SAN NICOLAS</td>
+  <td>JR. HUAYABAMBA N° 414</td>
+  <td>8:00 - 20:00</td>
+  <td>8:00 - 20:00</td>
+  <td>8:00 - 17:00</td>
+  <td>8:00 - 17:00</td>
+</tr>
+<tr>
+  <td>18</td>
+  <td>PDVA</td>
+  <td>AMAZONAS</td>
+  <td>UTCUBAMBA</td>
+  <td>LONYA GRANDE</td>
+  <td>CALLE SAN FRANCISCO N° 174</td>
+  <td>8:00 - 20:00</td>
+  <td>8:00 - 20:00</td>
+  <td>8:00 - 17:00</td>
+  <td>8:00 - 17:00</td>
+</tr>
+<tr>
+  <td>19</td>
+  <td>PDVA</td>
+  <td>CAJAMARCA</td>
+  <td>SAN IGNACIO</td>
+  <td>SAN IGNACIO</td>
+  <td>AV. SAN IGNACIO N° 366</td>
+  <td>9:00 - 20:00</td>
+  <td>9:00 - 20:00</td>
+  <td>9:00 - 17:00</td>
+  <td>9:00 - 17:00</td>
+</tr>
+<tr>
+  <td>20</td>
+  <td>PDVA</td>
+  <td>CAJAMARCA</td>
+  <td>JAEN</td>
+  <td>POMAHUACA</td>
+  <td>CALLE ATAHUALPA S/N</td>
+  <td>9:00 - 20:00</td>
+  <td>9:00 - 20:00</td>
+  <td>9:00 - 17:00</td>
+  <td>9:00 - 17:00</td>
+</tr>
+<tr>
+    <td>21</td>
+    <td>PDVA</td>
+    <td>CAJAMARCA</td>
+    <td>SAN IGNACIO</td>
+    <td>TABACONAS</td>
+    <td>AV. 28 DE JULIO S/N</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 17:00</td>
+    <td>9:00 - 17:00</td>
+</tr>
+<tr>
+    <td>22</td>
+    <td>PDVA</td>
+    <td>CAJAMARCA</td>
+    <td>SAN IGNACIO</td>
+    <td>CHIRINOS</td>
+    <td>JR. MARISCAL CASTILLA S/N</td>
+    <td>10:00 - 21:00</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 17:00</td>
+    <td>9:00 - 17:00</td>
+</tr>
+<tr>
+    <td>23</td>
+    <td>PDVA</td>
+    <td>AMAZONAS</td>
+    <td>CONDORCANQUI</td>
+    <td>NIEVA</td>
+    <td>AV. LOS COMERCIANTES N° 210 CENTRO POBLADO TAYUNTSA</td>
+    <td>8:00 - 20:00</td>
+    <td>8:00 - 20:00</td>
+    <td>8:00 - 17:00</td>
+    <td>8:00 - 17:00</td>
+</tr>
+<tr>
+    <td>24</td>
+    <td>PDVA</td>
+    <td>AMAZONAS</td>
+    <td>BAGUA</td>
+    <td>ARAMANGO</td>
+    <td>AV. PRINCIPAL N° 308 CENTRO POBLADO EL MUYO</td>
+    <td>8:00 - 20:00</td>
+    <td>8:00 - 20:00</td>
+    <td>8:00 - 17:00</td>
+    <td>8:00 - 17:00</td>
+</tr>
+<tr>
+    <td>25</td>
+    <td>PDVA</td>
+    <td>AMAZONAS</td>
+    <td>RODRIGUEZ DE MENDOZA</td>
+    <td>HUAMBO</td>
+    <td>AV. AMAZONAS N°329</td>
+    <td>8:00 - 20:00</td>
+    <td>8:00 - 20:00</td>
+    <td>8:00 - 17:00</td>
+    <td>8:00 - 17:00</td>
+</tr>
+<tr>
+    <td>26</td>
+    <td>PDVA</td>
+    <td>AMAZONAS</td>
+    <td>BONGARA</td>
+    <td>JAZAN</td>
+    <td>JR. SACSAHUAMAN N° 130</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 17:00</td>
+    <td>9:00 - 17:00</td>
+</tr>
+<tr>
+    <td>27</td>
+    <td>PDVA</td>
+    <td>AMAZONAS</td>
+    <td>CONDORCANQUI</td>
+    <td>NIEVA</td>
+    <td>AV. JUAN VELASCO  S/N</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>28</td>
+    <td>PDVA</td>
+    <td>CAJAMARCA</td>
+    <td>SAN IGNACIO</td>
+    <td>SAN IGNACIO</td>
+    <td>JR. SANTA ROSA N° 234</td>
+    <td>10:00 - 20:00</td>
+    <td>8:00 - 20:00</td>
+    <td>8:00 - 13:00</td>
+    <td>8:00 - 13:00</td>
+</tr>
+<tr>
+    <td>29</td>
+    <td>PDVA</td>
+    <td>AMAZONAS</td>
+    <td>RODRIGUEZ DE MENDOZA</td>
+    <td>SAN NICOLAS</td>
+    <td>JR. MATIAZA RIMACHI N° 603</td>
+    <td>8:00 - 20:00</td>
+    <td>8:00 - 20:00</td>
+    <td>8:00 - 17:00</td>
+    <td>8:00 - 17:00</td>
+</tr>
+<tr>
+    <td>30</td>
+    <td>PDVA</td>
+    <td>AMAZONAS</td>
+    <td>UTCUBAMBA</td>
+    <td>BAGUA GRANDE</td>
+    <td>AV. MARIANO MELGAR N°1062</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>31</td>
+    <td>CAB DEALER</td>
+    <td>ANCASH</td>
+    <td>SANTA</td>
+    <td>NUEVO CHIMBOTE</td>
+    <td>AV. PACIFICO N° 420 URB. BUENOS AIRES I ETAPA MZ. H LT. 01</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>32</td>
+    <td>CAB DEALER</td>
+    <td>ANCASH</td>
+    <td>SANTA</td>
+    <td>CHIMBOTE</td>
+    <td>AV. FRANCISCO BOLOGNESI N° 761 MZA-11 LTE-17A CASCO URBANO CENTRAL</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>33</td>
+    <td>CAB DEALER</td>
+    <td>ANCASH</td>
+    <td>SANTA</td>
+    <td>CHIMBOTE</td>
+    <td>JR. ELIAS AGUIRRE N° 347</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>34</td>
+    <td>CAB DEALER</td>
+    <td>ANCASH</td>
+    <td>SANTA</td>
+    <td>CHIMBOTE</td>
+    <td>AV. JOSE GALVEZ N° 303</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>35</td>
+    <td>CAB DEALER</td>
+    <td>ANCASH</td>
+    <td>CASMA</td>
+    <td>CASMA</td>
+    <td>AV. NEPEÑA MZ N LT 22</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>8:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>36</td>
+    <td>CAB DEALER</td>
+    <td>ANCASH</td>
+    <td>HUARAZ</td>
+    <td>HUARAZ</td>
+    <td>AV. LARCO N° 895</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>37</td>
+    <td>CAB DEALER</td>
+    <td>ANCASH</td>
+    <td>HUARAZ</td>
+    <td>HUARAZ</td>
+    <td>JR. GRAU N° 122</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>38</td>
+    <td>CAB DEALER</td>
+    <td>ANCASH</td>
+    <td>HUARAZ</td>
+    <td>HUARAZ</td>
+    <td>AV. AGUSTIN GAMARRA N° 111</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>39</td>
+    <td>CAB DEALER</td>
+    <td>ANCASH</td>
+    <td>HUARAZ</td>
+    <td>HUARAZ</td>
+    <td>AV. LARCO N° 143</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>40</td>
+    <td>CAB DEALER</td>
+    <td>ANCASH</td>
+    <td>HUARAZ</td>
+    <td>HUARAZ</td>
+    <td>JR. MANUEL BECERRA N° 145</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>41</td>
+    <td>PDVA</td>
+    <td>ANCASH</td>
+    <td>SANTA</td>
+    <td>SANTA</td>
+    <td>JR. MARAÑON MZ N LT 18</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>42</td>
+    <td>PDVA</td>
+    <td>ANCASH</td>
+    <td>SANTA</td>
+    <td>NUEVO CHIMBOTE</td>
+    <td>URB. BELLAMAR MZ I LT 10 AV. UNIVERSITARIA</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td></td>
+</tr>
+<tr>
+    <td>43</td>
+    <td>PDVA</td>
+    <td>ANCASH</td>
+    <td>CASMA</td>
+    <td>YAUTAN</td>
+    <td>CARRETERA PENETRACION A HUARAZ A-06 YAUTAN</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td></td>
+</tr>
+<tr>
+    <td>44</td>
+    <td>PDVA</td>
+    <td>ANCASH</td>
+    <td>SANTA</td>
+    <td>SANTA</td>
+    <td>AV. RINCONADA Q 9</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td></td>
+</tr>
+<tr>
+    <td>45</td>
+    <td>PDVA</td>
+    <td>ANCASH</td>
+    <td>SANTA</td>
+    <td>CHIMBOTE</td>
+    <td>CALLE 10 DE SEPTIEMBRE MZA Q LTE 08 ANTENOR ORREGO</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td></td>
+</tr>
+<tr>
+    <td>46</td>
+    <td>PDVA</td>
+    <td>ANCASH</td>
+    <td>SANTA</td>
+    <td>NEPEÑA</td>
+    <td>CALLE UNIÓN MZ. 26 001B PBLO. SAN JACINTO</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>47</td>
+    <td>PDVA</td>
+    <td>ANCASH</td>
+    <td>CASMA</td>
+    <td>YAUTAN</td>
+    <td>MZ. O LOTE 16A CP CACHIPAMPA</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>48</td>
+    <td>PDVA</td>
+    <td>ANCASH</td>
+    <td>SANTA</td>
+    <td>CHIMBOTE</td>
+    <td>PJE. JOVEN EL PROGRESO MZ. R LT. 41</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>49</td>
+    <td>PDVA</td>
+    <td>ANCASH</td>
+    <td>SANTA</td>
+    <td>NUEVO CHIMBOTE</td>
+    <td>AA.HH. LOS CONSTRUCTORES MZ. A5 LT. 06</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>50</td>
+    <td>PDVA</td>
+    <td>ANCASH</td>
+    <td>SANTA</td>
+    <td>CHIMBOTE</td>
+    <td>JR. MANUEL RUIZ N° 615 - 621</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>51</td>
+    <td>PDVA</td>
+    <td>ANCASH</td>
+    <td>SANTA</td>
+    <td>MORO</td>
+    <td>MZ. 36 0008 Int. A</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>52</td>
+    <td>PDVA</td>
+    <td>ANCASH</td>
+    <td>CASMA</td>
+    <td>BUENA VISTA ALTA</td>
+    <td>PL. HUANCHUY S/N</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>53</td>
+    <td>PDVA</td>
+    <td>ANCASH</td>
+    <td>SANTA</td>
+    <td>NUEVO CHIMBOTE</td>
+    <td>URB. BUENOS AIRES MZ. D1 LT 05</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>54</td>
+    <td>PDVA</td>
+    <td>ANCASH</td>
+    <td>SANTA</td>
+    <td>NUEVO CHIMBOTE</td>
+    <td>AA.HH. LAS LOMAS SUR MZ F LT 3</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>55</td>
+    <td>PDVA</td>
+    <td>ANCASH</td>
+    <td>CASMA</td>
+    <td>CASMA</td>
+    <td>AV. LUIS ORMEÑO MZ L LT 8A</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>56</td>
+    <td>PDVA</td>
+    <td>ANCASH</td>
+    <td>PALLASCA</td>
+    <td>CABANA</td>
+    <td>JR. SAN GERONIMO CUADRA 1 S/N</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>57</td>
+    <td>PDVA</td>
+    <td>ANCASH</td>
+    <td>SANTA</td>
+    <td>CHIMBOTE</td>
+    <td>AV. BOLIVIA MZ R LT 06</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>58</td>
+    <td>PDVA</td>
+    <td>ANCASH</td>
+    <td>SANTA</td>
+    <td>CASMA</td>
+    <td>MZ. C LT. 10</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>59</td>
+    <td>PDVA</td>
+    <td>ANCASH</td>
+    <td>SANTA</td>
+    <td>CHIMBOTE</td>
+    <td>CALLE LORCA MZ F LT 23</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>60</td>
+    <td>PDVA</td>
+    <td>ANCASH</td>
+    <td>SANTA</td>
+    <td>NUEVO CHIMBOTE</td>
+    <td>AV. LOS REYES MZ 3 LT 17</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>61</td>
+    <td>CAB DEALER</td>
+    <td>APURIMAC</td>
+    <td>ABANCAY</td>
+    <td>ABANCAY</td>
+    <td>AV. DIAZ BARCENAS N° 627</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>62</td>
+    <td>CAB DEALER</td>
+    <td>APURIMAC</td>
+    <td>ANDAHUAYLAS</td>
+    <td>ANDAHUAYLAS</td>
+    <td>AV. PERÚ N° 104</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>63</td>
+    <td>PDVA</td>
+    <td>APURIMAC</td>
+    <td>ABANCAY</td>
+    <td>ABANCAY</td>
+    <td>AV. CANADÁ N° 126</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>64</td>
+    <td>PDVA</td>
+    <td>APURIMAC</td>
+    <td>COTABAMBAS</td>
+    <td>TAMBOBAMBA</td>
+    <td>AV. AMAUTA S/N</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>65</td>
+    <td>PDVA</td>
+    <td>APURIMAC</td>
+    <td>CHINCHEROS</td>
+    <td>ANCO-HUALLO</td>
+    <td>JR. TUPAC AMARU N° 321</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>66</td>
+    <td>PDVA</td>
+    <td>APURIMAC</td>
+    <td>COTABAMBAS</td>
+    <td>CHALLHUAHUACHO</td>
+    <td>CALLE DIAGONAL SAUSAMA MZ R LT 7</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>67</td>
+    <td>PDVA</td>
+    <td>APURIMAC</td>
+    <td>ANDAHUAYLAS</td>
+    <td>TALAVERA</td>
+    <td>AV. 28 DE JULIO N° 201</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>68</td>
+    <td>PDVA</td>
+    <td>APURIMAC</td>
+    <td>COTABAMBAS</td>
+    <td>HAQUIRA</td>
+    <td>CALLE 28 DE JULIO S/N</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>69</td>
+    <td>PDVA</td>
+    <td>APURIMAC</td>
+    <td>ABANCAY</td>
+    <td>TAMBURCO</td>
+    <td>AV. TUPAC AMARU S/N, TAMBURCO</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>70</td>
+    <td>PDVA</td>
+    <td>APURIMAC</td>
+    <td>ANDAHUAYLAS</td>
+    <td>SAN JERONIMO</td>
+    <td>JR. SAN MARTÍN S/N</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>71</td>
+    <td>PDVA</td>
+    <td>APURIMAC</td>
+    <td>AYMARAES</td>
+    <td>CHALHUANCA</td>
+    <td>AV. PANAMERICANA 225</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>72</td>
+    <td>PDVA</td>
+    <td>APURIMAC</td>
+    <td>GRAU</td>
+    <td>CHUQUIBAMBILLA</td>
+    <td>JR. LEONCIO PRADO N° 103</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>73</td>
+    <td>PDVA</td>
+    <td>APURIMAC</td>
+    <td>ABANCAY</td>
+    <td>CURAHUASI</td>
+    <td>AV. SANTA CATALINA LT. 12 MZ. B2</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>74</td>
+    <td>PDVA</td>
+    <td>APURIMAC</td>
+    <td>CHINCHEROS</td>
+    <td>OCOBAMBA</td>
+    <td>AV. MARTINELLY N°224</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>75</td>
+    <td>PDVA</td>
+    <td>APURIMAC</td>
+    <td>CHINCHEROS</td>
+    <td>HUACCANA</td>
+    <td>AV. JOSE MARÍA ARGUEDAS N° 224</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>76</td>
+    <td>PDVA</td>
+    <td>APURIMAC</td>
+    <td>CHINCHEROS</td>
+    <td>SAN PABLO</td>
+    <td>AV. COMANDANTE MONTENEGRO N° 234</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>77</td>
+    <td>PDVA</td>
+    <td>APURIMAC</td>
+    <td>ANDAHUAYLAS</td>
+    <td>PACUCHA</td>
+    <td>JR. ALARCON RUA - S/N</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>78</td>
+    <td>PDVA</td>
+    <td>APURIMAC</td>
+    <td>ANDAHUAYLAS</td>
+    <td>SANTA MARIA DE CHICMO</td>
+    <td>JR. NUEVA ESPERANZA - S/N</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>79</td>
+    <td>PDVA</td>
+    <td>APURIMAC</td>
+    <td>COTABAMBAS</td>
+    <td>CHALLHUAHUACHO</td>
+    <td>JR. PATRON SANTIAGO - S/N</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>80</td>
+    <td>PDVA</td>
+    <td>APURIMAC</td>
+    <td>ANDAHUAYLAS</td>
+    <td>HUANCARAMA</td>
+    <td>JR. BOLIVAR S/N</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>81</td>
+    <td>CAB DEALER</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>CALLE SAN CAMILO N° 525-A</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>82</td>
+    <td>CAB DEALER</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>CERRO COLORADO</td>
+    <td>ASOC. VIV. CIUDAD MUNICIPAL ZONA 1 MZ A LOTE 3</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>83</td>
+    <td>CAB DEALER</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>AV. JORGE CHAVEZ N° 301-A</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>84</td>
+    <td>CAB DEALER</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>CERRO COLORADO</td>
+    <td>CALLE MARAÑON N° 110</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>85</td>
+    <td>CAB DEALER</td>
+    <td>AREQUIPA</td>
+    <td>CAYLLOMA</td>
+    <td>MAJES</td>
+    <td>CALLE CAYMA MZ. L LOTE 4 TIENDA 4</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>9:00 - 20:00</td>
+</tr>
+<tr>
+    <td>86</td>
+    <td>CAB DEALER</td>
+    <td>AREQUIPA</td>
+    <td>CAMANA</td>
+    <td>CAMANA</td>
+    <td>JR. 28 DE JULIO N° 122</td>
+    <td>8:30 - 20:00</td>
+    <td>8:30 - 20:00</td>
+    <td>8:30 - 20:00</td>
+    <td>8:30 - 20:00</td>
+</tr>
+<tr>
+    <td>87</td>
+    <td>CAB DEALER</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>MIRAFLORES</td>
+    <td>CALLE ELIAS AGUIRRE N° 320</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>88</td>
+    <td>CAB DEALER</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>JOSE LUIS BUSTAMANTE Y RIVERO</td>
+    <td>URB. VISTA HERMOZA SECT B MZ. F LT. 3 SEC. C4 TIENDA 3</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>89</td>
+    <td>CAB DEALER</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>LA JOYA</td>
+    <td>PJE. EL TRIUNFO MZ. B LT. 05 ZN. C</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>9:00 - 20:00</td>
+</tr>
+<tr>
+    <td>90</td>
+    <td>CAB DEALER</td>
+    <td>AREQUIPA</td>
+    <td>ISLAY</td>
+    <td>MOLLENDO</td>
+    <td>CALLE AREQUIPA N° 389</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>91</td>
+    <td>CAB DEALER</td>
+    <td>AREQUIPA</td>
+    <td>CAMANA</td>
+    <td>MARIANO NICOLAS VALCARCEL</td>
+    <td>AV. 3 DE MAYO MZ H LT 9</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td></td>
+</tr>
+<tr>
+    <td>92</td>
+    <td>CAB DEALER</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>MIRAFLORES</td>
+    <td>CALLE ELIAS AGUIRRE N° 304</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td></td>
+</tr>
+<tr>
+    <td>93</td>
+    <td>CAB DEALER</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>JACOBO HUNTER</td>
+    <td>CALLE ARTURO IBAÑEZ S/N LOCAL L2</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>94</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>CAYLLOMA</td>
+    <td>CHIVAY</td>
+    <td>CALLE MIGUEL GRAU N° 106</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 20:00</td>
+</tr>
+<tr>
+    <td>95</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>CASTILLA</td>
+    <td>APLAO</td>
+    <td>AV. 21 DE MARZO S/N</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>96</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>YURA</td>
+    <td>ASOC. VIV. CAMINEROS SECTOR EMPLEADOS MZ- Z LT 09 YURA</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>97</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>CERRO COLORADO</td>
+    <td>ASOC. VIV. JAVIER LUNA PIZARRO MZ. G, LT 12</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>98</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>LA UNION</td>
+    <td>COTAHUASI</td>
+    <td>CALLE AREQUIPA N° 101</td>
+    <td>8:00 - 20:00</td>
+    <td>8:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>99</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>CARAVELI</td>
+    <td>ATICO</td>
+    <td>AA.HH. LA FLORIDA MZ. 112 LT. 9 A</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 17:00</td>
+</tr>
+<tr>
+    <td>100</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>YURA</td>
+    <td>ASOC. VIV. CUIDAD DE DIOS ZN 4 SEC. A MZ O LT 1</td>
+    <td>8:00 - 20:00</td>
+    <td>8:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>8:00 - 20:00</td>
+</tr>
+<tr>
+    <td>101</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>ISLAY</td>
+    <td>PUNTA DE BOMBON</td>
+    <td>AV. OLAZABAL N° 318</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td></td>
+</tr>
+<tr>
+    <td>102</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>SOCABAYA</td>
+    <td>AA.HH. URB. MUNICIPAL HORACIO ZEBALLOS GAMEZ MZ 32 LT 10</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 19:00</td>
+</tr>
+<tr>
+    <td>103</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>JOSE LUIS BUSTAMANTE Y RIVERO</td>
+    <td>URB. 3 DE OCTUBRE CTE 4 MZ Ñ LOTE 9A</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td></td>
+</tr>
+<tr>
+    <td>104</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>CASTILLA</td>
+    <td>URACA</td>
+    <td>AV. PROGRESO N° 124 CORIRE</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>105</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>CONDESUYOS</td>
+    <td>CHUQUIBAMBA</td>
+    <td>AV. MARISCAL CASTILLA N° 102</td>
+    <td>9:00 - 20:00</td>
+    <td>9:00 - 20:00</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>106</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>CONDESUYOS</td>
+    <td>RIO GRANDE</td>
+    <td>CALLE LA RECTA MZ. LT. 6 ANEXO DE ALTO MOLINO</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>107</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>YURA</td>
+    <td>AV. YURA S/N ASOC. DE VIV. LAS FLORES LT. 11</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>108</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>CERRO COLORADO</td>
+    <td>AV. LOS HORIZONTES N° 228</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td></td>
+</tr>
+<tr>
+    <td>109</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>TIERRA BRAVA</td>
+    <td>AV. MANUEL C. ELIAS N° 312</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td></td>
+</tr>
+<tr>
+    <td>110</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>UNION</td>
+    <td>AV. INDEPENDENCIA MZ. C, LT. 13</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td>10:00 - 20:00</td>
+</tr>
+<tr>
+    <td>111</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>SOCABAYA</td>
+    <td>CALLE ENRIQUE NERI CARRION N° 229</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td></td>
+</tr>
+<tr>
+    <td>112</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>CERRO COLORADO</td>
+    <td>AV. DELLA S/N ANEXO A LOS CERROS</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td></td>
+</tr>
+<tr>
+    <td>113</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>TIERRA BRAVA</td>
+    <td>AV. JUAN PABLO II N° 336</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td></td>
+</tr>
+<tr>
+    <td>114</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>YURA</td>
+    <td>CALLE S/N ASOC. VIV. CUIDAD DE DIOS LT. 5</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td></td>
+</tr>
+<tr>
+    <td>115</td>
+    <td>PDVA</td>
+    <td>AREQUIPA</td>
+    <td>AREQUIPA</td>
+    <td>YURA</td>
+    <td>AV. LA PAZ N° 1078</td>
+    <td>8:00 - 20:00</td>
+    <td>8:00 - 20:00</td>
+    <td>10:00 - 17:00</td>
+    <td></td>
+
+</tr>
+
+        </tbody>
+    </table>
+
+    <!-- Botón para copiar los resultados -->
+    <button id="copy-btn">Copiar Resultados</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

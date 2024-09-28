@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoyo Gestión 123</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="manifest" href="/manifest.json"> <!-- Enlace al manifiesto -->
+    <link rel="stylesheet" href="principal.css">
+</head>
+<body>
+    <div class="top-buttons">
+        <button id="toggle-mode-btn">Modo Claro</button>
+        <button class="help-btn" onclick="toggleHelp()">Ayuda</button>
+    </div>
+
+ <!-- Añadir botones para redirigir a los proyectos de Apoyo ATC y CAB -->
+ <div class="project-buttons">
+    <button class="new-button-1" onclick="location.href='Calidad%20de%20Red/index.html'">Calidad de Red</button>
+    <button class="new-button-2" onclick="location.href='Lista%20de%20CAB/index.html'">Lista de CAB</button>
+</div>
+
+    <div class="sidebar-buttons">
+        <a href="https://drive.google.com/file/d/16e9OPdI-SE-E015JbKXH5TEoEgWXUwQX/view" target="_blank">Excel de Incidencias</a>
+        <a href="https://drive.google.com/uc?id=1-10Nb7yEY0duq59DoQ2eZ8MuUVQBqo_u&export=download" target="_blank">Excel de Calidad de Red</a>
+        <a href="https://drive.google.com/file/d/1107wsIjNILbIFbAa-5bYktum8L35pH5e/view" target="_blank">Excel de Reclamos</a>
+        <a href="https://drive.google.com/uc?id=1V9yusCloz3nHGpD1jERL5wu_j0Gu5mhu&export=download" target="_blank">Excel de Lista de CAB</a>
+    </div>
+
+    <div class="container">
+        <h1>Generador de Resultado de Llamada</h1>
+
+        <div class="form-group">
+            <label for="client-number">Número:</label>
+            <input type="text" id="client-number" placeholder="Ingrese el número del cliente">
+        </div>
+
+        <div class="form-group">
+            <label for="client-query">Consulta:</label>
+            <input type="text" id="client-query" placeholder="Ingrese la consulta del cliente">
+        </div>
+
+        <div class="form-group">
+            <label for="response">Respuesta:</label>
+            <input type="text" id="response" placeholder="Ingrese la respuesta">
+        </div>
+
+        <div class="form-group">
+            <label for="call-code">Código:</label>
+            <input type="text" id="call-code" placeholder="Ingrese el código" value="$$__&&">
+        </div>
+
+        <div class="form-group">
+            <button class="generate-btn" onclick="generateResult()">Generar Resultado y Copiar</button>
+        </div>
+
+        <div class="file-import">
+            <label for="file-input">Importar Archivo de Texto:</label>
+            <input type="file" id="file-input" accept=".txt" onchange="handleFileUpload(event)">
+            <textarea id="imported-text" readonly></textarea>
+        </div>
+
+        <div class="form-group" style="max-width: 700px; margin: 20px auto;">
+            <label for="text-to-change">Texto para Formatear:</label>
+            <textarea id="text-to-change" rows="3"></textarea>
+            <div class="align-buttons" style="margin-top: 10px;">
+                <button class="generate-btn" onclick="copyTransformedText()">Copiar Texto Formateado</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="speech-section">
+        <h2>Speech Facturación</h2>
+        <div class="speech-block" onclick="copySpeech(1)">
+            <p>(Nombre del cliente), si tiene más dudas sobre su facturación le invitamos a realizarlo por nuestro canal de WhatsApp, le enviaré un SMS con el link de acceso directo para una atención personalizada y rápida.</p>
+        </div>
+        <div class="speech-block" onclick="copySpeech(2)">
+            <p>(Nombre del cliente), puedes seguir consultando sobre tu facturación a través de nuestro canal de WhatsApp Bitel, ingresando al siguiente enlace: <a href="http://bit.ly/3rIo3dG" target="_blank">http://bit.ly/3rIo3dG</a>. Dale en enviar y uno de nuestros asesores te responderá a la brevedad.</p>
+        </div>
+        <div class="speech-block" onclick="copySpeech(3)">
+            <p>También puedes visualizar esta información ingresando a la sección “MI BITEL” de nuestra página web o descargando nuestra app MI BITEL.</p>
+        </div>
+    </div>
+
+    <div class="help">
+        <h3>Guía de Uso</h3>
+        <p><strong>Número:</strong> Ingrese el número del cliente.</p>
+        <p><strong>Consulta:</strong> Escriba la consulta del cliente.</p>
+        <p><strong>Respuesta:</strong> Escriba la respuesta que se dará al cliente.</p>
+        <p><strong>Código:</strong> Ingrese el código de llamada manualmente.</p>
+        <button onclick="toggleHelp()">Cerrar</button>
+    </div>
+
+    <footer class="footer">
+        <div>Desarrollado por © Elvis Sebastián 2024</div>
+        <div class="social-icons">
+            <a href="https://wa.me/966766495" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:elvissebas39@gmail.com" title="Gmail"><i class="fab fa-google"></i></a>
+        </div>
+    </footer>
+
+    <div id="notification" class="notification"></div>
+    <script src="principal.js"></script>
+</body>
+</html>
+
+
