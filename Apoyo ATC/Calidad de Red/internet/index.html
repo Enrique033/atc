@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Configuraciones de Internet</title>
-
 </head>
 <body>
     <header>
@@ -16,7 +15,14 @@
             </ul>
         </nav>
     </header>
-    <main >
+
+    <!-- Botones de navegación fuera del encabezado -->
+    <div class="navigation-buttons">
+        <button id="preguntas-filtro-btn" class="nav-button">Preguntas Filtro</button>
+        <button id="pedidos-btn" class="nav-button">Pedidos</button>
+    </div>
+
+    <main>
         <h2>Problemas de Conexión</h2>
 
         <h3>Mensajes de Lentitud</h3>
@@ -54,7 +60,7 @@ Servicio sobre el que versa el inconveniente: Internet Fijo / Móvil
 Indicador de cobertura:
 Lugar donde se registra el problema (dirección, distrito, provincia, región)
 $$__&&">
-           <pre class="plantilla-contenido">
+            <pre class="plantilla-contenido">
 N° DEL QUE LLAMA // CONSULTA // RESPUESTA
 Tipo de solicitante: (Titular/Usuario)
 Nombre del solicitante:
@@ -69,6 +75,8 @@ Lugar donde se registra el problema (dirección, distrito, provincia, región)
 $$__&&
             </pre>
         </div>
+        <!-- Contenedor del mensaje de confirmación -->
+        <div id="confirmacion-copiar" class="hidden"></div>
         <h3>Speech</h3>
         <p>(Nombre) le confirmamos que hemos recibido y registrado su pedido con el código XXXX. El plazo estimado de atención es de 5 días calendarios. Nuestra respuesta será enviada vía SMS en 1 día calendario luego del plazo de atención.</p>
 
@@ -134,6 +142,8 @@ Tipo de comprobante adjunto:
 $$__&&
             </pre>
         </div>
+        <!-- Contenedor del mensaje de confirmación -->
+        <div id="confirmacion-copiar" class="hidden"></div>
         <h3>Speech</h3>
         <p>(Nombre) le confirmamos que hemos recibido y registrado su pedido con el código XXXX. El plazo estimado de atención es de 3 días calendarios. Nuestra respuesta será enviada vía SMS en 1 día hábil luego del plazo de atención.</p>
 
@@ -142,8 +152,5 @@ $$__&&
         
     </main>
     <script src="script.js"></script>
-    
-    
 </body>
 </html>
-

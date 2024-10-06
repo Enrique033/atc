@@ -15,6 +15,10 @@ header {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+h1 {
+    text-align: center;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -22,7 +26,7 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 20px;
+    margin: 5px 20px;
 }
 
 nav ul li a {
@@ -39,6 +43,48 @@ nav ul li a:hover {
     color: #007bff;
     transform: scale(1.1);
     text-decoration: none;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: center; /* Centrar los botones */
+    margin: 20px 0; /* Espacio arriba y abajo */
+}
+
+.nav-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+    margin: 0 10px; /* Espacio entre botones */
+    font-weight: bold; /* Negrita en el texto del botón */
+    text-decoration: none; /* Sin subrayado */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.button-container {
+    margin-top: 10px; /* Espacio entre el nav y los botones */
+}
+
+.action-button {
+    background-color: #007bff; /* Color de fondo para los botones de acción */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno */
+    font-weight: bold; /* Negrita */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    margin-right: 10px; /* Espacio entre los botones */
+    transition: background 0.3s; /* Transición */
+}
+
+.nav-button:hover {
+    background: #ffc107;
+    color: #007bff;
+    transform: scale(1.1);
 }
 
 main {
@@ -154,27 +200,28 @@ strong:hover {
 }
 
 /* Estilos para el mensaje de confirmación */
-#confirmation-message {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #4caf50;
-    color: white;
-    padding: 15px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
-    transform: translateY(10px);
-    font-size: 1em;
-    z-index: 1000;
+#confirmacion-copiar {
+    position: fixed; /* Fijo en relación a la ventana */
+    bottom: 20px; /* Espacio desde la parte inferior */
+    right: 20px; /* Espacio desde la parte derecha */
+    background-color: #4caf50; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 15px 20px; /* Espacio interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra */
+    opacity: 0; /* Comienza como invisible */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transiciones suaves */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    transform: translateY(20px); /* Mueve el mensaje hacia arriba al aparecer */
 }
 
-#confirmation-message.visible {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
+#confirmacion-copiar.visible {
+    opacity: 1; /* Se vuelve visible cuando tiene la clase 'visible' */
+    transform: translateY(0); /* Restablece la posición al aparecer */
+}
+
+.hidden {
+    display: none; /* Oculta el elemento, solo se usa en JS */
 }
 
 /* Estilo para eliminar subrayados */
@@ -183,6 +230,53 @@ strong:hover {
     cursor: pointer;
 }
 
+/* Estilo para las preguntas */ /* Contenedor de las preguntas */  /* Contenedor de las preguntas */ /* Contenedor de las preguntas */ /* Contenedor de las preguntas */ /* Contenedor de las preguntas */ 
 
+.question-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
 
+/* Estilo de cada pregunta */
+.question {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    width: 250px; /* Ancho de las tarjetas de preguntas */
+    text-align: left; /* Alinear texto a la izquierda */
+    transition: 0.3s; /* Transición suave para efectos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+}
 
+/* Efecto al pasar el mouse sobre una pregunta */
+.question:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Aumenta la sombra */
+}
+
+/* Contenedor de preguntas en el pie de página */
+.footer-questions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Permite que las preguntas se acomoden en varias líneas */
+}
+
+/* Estilo de cada pregunta en el pie de página */
+.footer-question {
+    width: 200px; /* Ancho de las preguntas del pie de página */
+    margin: 10px; /* Espacio entre preguntas */
+    padding: 10px; /* Espaciado interno */
+    background-color: #e8f0fe; /* Color de fondo */
+    border-radius: 5px; /* Bordes redondeados */
+    text-align: center; /* Centrar texto */
+    transition: 0.3s; /* Transición suave */
+}
+
+/* Efecto al pasar el mouse sobre una pregunta del pie de página */
+.footer-question:hover {
+    background-color: #d1e0fe; /* Color de fondo al pasar el mouse */
+}

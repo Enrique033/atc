@@ -3,33 +3,88 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 20px;
-    color: #333;
+    transition: background 0.5s ease-in-out;
 }
 
 header {
-    background: #2980b9;
+    background: #007bff; /* Color del encabezado */
     color: white;
-    padding: 10px 0;
+    padding: 20px 0;
+    text-align: center;
+    animation: slideIn 0.8s ease-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
     text-align: center;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
+    margin: 0;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    background: #ffc107;
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: center; /* Centrar los botones */
+    margin: 20px 0; /* Espacio arriba y abajo */
+}
+
+.nav-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+    margin: 0 10px; /* Espacio entre botones */
+}
+
+.nav-button:hover {
+    background: #ffc107;
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+button-container {
+    margin-top: 10px; /* Espacio entre el nav y los botones */
+}
+
+.action-button {
+    background-color: #007bff; /* Color de fondo para los botones de acción */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno */
+    font-weight: bold; /* Negrita */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    margin-right: 10px; /* Espacio entre los botones */
+    transition: background 0.3s; /* Transición */
+}
+
+.action-button:hover {
+    background: #0056b3; /* Color más oscuro al pasar el ratón */
 }
 
 main {
@@ -37,12 +92,12 @@ main {
 }
 
 h2, h3 {
-    color: #2980b9;
+    color: #2980b9; /* Color de los encabezados */
     margin-top: 30px;
 }
 
 .copiar-btn, #copiar-plantilla {
-    background-color: #3498db;
+    background-color: #3498db; /* Color de fondo de botones de copiar */
     color: white;
     border: none;
     padding: 10px 15px;
@@ -60,13 +115,6 @@ h2, h3 {
 
 .copiar-btn:active, #copiar-plantilla:active {
     transform: scale(0.95); /* Efecto de pulsación */
-}
-
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background: #ddd;
-    margin-top: 20px; /* Añadir margen para separar del contenido */
 }
 
 pre {
@@ -99,27 +147,25 @@ button[type="submit"]:active {
 
 #confirmacion-copiar {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #2ecc71;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    display: none; /* Oculto por defecto */
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    bottom: 20px; /* Espacio desde la parte inferior */
+    right: 20px; /* Espacio desde la parte derecha */
+    background-color: #2ecc71; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 15px; /* Espacio interno */
+    border-radius: 5px; /* Bordes redondeados */
+    opacity: 0; /* Comienza como invisible */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transiciones suaves */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    transform: translateY(20px); /* Mueve el mensaje hacia arriba al aparecer */
 }
 
 #confirmacion-copiar.visible {
-    display: block; /* Mostrar cuando se activa */
-}
-.hidden {
-    display: none;
+    opacity: 1; /* Se vuelve visible cuando tiene la clase 'visible' */
+    transform: translateY(0); /* Restablece la posición al aparecer */
 }
 
-.visible {
-    display: block;
-    animation: fadeIn 0.5s forwards;
+.hidden {
+    display: none; /* Oculta el elemento */
 }
 
 @keyframes fadeIn {
@@ -127,17 +173,102 @@ button[type="submit"]:active {
     to { opacity: 1; }
 }
 
-/* Estilos para los botones */
-.copiar-btn {
-    padding: 10px 20px;
-    background-color: #4CAF50; /* Verde */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+/* Estilos para las preguntas y aviso */
+ol {
+    margin: 10px 0;
+    padding-left: 20px; /* Espacio a la izquierda para la lista ordenada */
+    background-color: #ffffff; /* Color de fondo blanco */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
 }
 
-.copiar-btn:hover {
-    background-color: #45a049; /* Color más oscuro al pasar el ratón */
+ol li {
+    margin: 5px 0; /* Espacio entre preguntas */
 }
+
+.aviso {
+    background-color: #f9c2c2; /* Color de fondo para el aviso */
+    border: 1px solid #d9534f; /* Bordes */
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.aviso p {
+    margin: 0; /* Sin margen en el párrafo del aviso */
+}
+
+/* Estilo para las preguntas */ /* Contenedor de las preguntas */  /* Contenedor de las preguntas */ /* Contenedor de las preguntas */ /* Contenedor de las preguntas */ /* Contenedor de las preguntas */ 
+
+/* Estilos para el contenedor de las preguntas */
+.question-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Estilo de cada pregunta */
+.question {
+    background: #ffffff; /* Fondo blanco */
+    color: black; /* Texto negro */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    width: 250px; /* Ancho de las tarjetas de preguntas */
+    text-align: left; /* Alinear texto a la izquierda */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s; /* Transición suave */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+}
+
+/* Efecto al pasar el mouse sobre una pregunta */
+.question:hover {
+    transform: translateY(-15px); /* Mueve la tarjeta hacia arriba */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Aumenta la sombra */
+    background-color: #f0f0f0; /* Color de fondo al pasar el mouse */
+    color: #333; /* Color del texto al pasar el mouse */
+}
+
+/* Estilo para la respuesta de las preguntas */
+.answer {
+    display: none; /* Oculto por defecto */
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.9); /* Fondo ligeramente blanco */
+    border-radius: 5px;
+    margin-top: 10px; /* Espacio entre pregunta y respuesta */
+}
+
+/* Contenedor de preguntas en el pie de página */
+.footer-questions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Permite que las preguntas se acomoden en varias líneas */
+}
+
+/* Estilo de cada pregunta en el pie de página */
+.footer-question {
+    background: #ffffff; /* Fondo blanco */
+    color: black; /* Texto negro */
+    border: 1px solid #ddd; /* Borde gris claro */
+    width: 200px; /* Ancho de las preguntas del pie de página */
+    margin: 10px; /* Espacio entre preguntas */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    text-align: center; /* Centrar texto */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s; /* Transición suave */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+}
+
+/* Efecto al pasar el mouse sobre una pregunta del pie de página */
+.footer-question:hover {
+    transform: translateY(-15px); /* Mueve la tarjeta hacia arriba */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Aumenta la sombra */
+    background-color: #f0f0f0; /* Color de fondo al pasar el mouse */
+    color: #333; /* Color del texto al pasar el mouse */
+}
+
