@@ -65,13 +65,47 @@ function showNotification(message) {
     }, 2000); // Muestra la notificación por 2 segundos
 }
 
-function copyTransformedText() {
+//apartado para cambiar texto
+
+function showCopyConfirmation() {
+    const confirmation = document.getElementById('copy-confirmation');
+    confirmation.style.display = 'block';
+
+    setTimeout(() => {
+        confirmation.style.display = 'none'; // Oculta la confirmación después de 2 segundos
+    }, 2000);
+}
+
+function copyToClipboard() {
     const textArea = document.getElementById('text-to-change');
-    textArea.value = capitalizeText(textArea.value);
     textArea.select();
     document.execCommand('copy');
-    showNotification('Texto copiado al portapapeles.');
+    showCopyConfirmation(); // Muestra el mensaje de confirmación
 }
+
+function toUpperCase() {
+    const textArea = document.getElementById('text-to-change');
+    textArea.value = textArea.value.toUpperCase();
+    copyToClipboard(); // Copia el texto transformado
+}
+
+function toLowerCase() {
+    const textArea = document.getElementById('text-to-change');
+    textArea.value = textArea.value.toLowerCase();
+    copyToClipboard(); // Copia el texto transformado
+}
+
+function toTitleCase() {
+    const textArea = document.getElementById('text-to-change');
+    textArea.value = textArea.value
+        .toLowerCase()
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+    copyToClipboard(); // Copia el texto transformado
+}
+
+
 
 function generateResult() {
     const clientNumber = document.getElementById('client-number').value || 'Número no ingresado';

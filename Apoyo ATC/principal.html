@@ -12,7 +12,6 @@
 <body>
     <div class="top-buttons">
         <button id="toggle-mode-btn">Modo Claro</button>
-        <button class="help-btn" onclick="toggleHelp()">Ayuda</button>
         <button class="logout-button" onclick="location.href='../index.html'">Cerrar Sesión</button> <!-- Botón Cerrar Sesión -->
     </div>
 
@@ -24,12 +23,6 @@
         <button class="new-button-speech" onclick="location.href='speech/index.html'">Speechs</button> <!-- Botón Speechs -->
     </div>    
 
-    <div class="sidebar-buttons">
-        <a href="https://drive.google.com/file/d/16e9OPdI-SE-E015JbKXH5TEoEgWXUwQX/view" target="_blank">Excel de Incidencias</a>
-        <a href="https://drive.google.com/uc?id=1AGT37_IAuFC8_j8MzQsAcIruN7Puu5B7&export=download" target="_blank">Excel de Calidad de Red</a>
-        <a href="https://drive.google.com/file/d/1HxyqJbldgIEKcLWeO35xflOdrFeZ_NQE/view" target="_blank">Excel de Reclamos</a>
-        <a href="https://drive.google.com/uc?id=1V9yusCloz3nHGpD1jERL5wu_j0Gu5mhu&export=download" target="_blank">Excel de Lista de CAB</a>
-    </div>
 
     <div class="container">
         <h1>Generador de Resultado de Llamada</h1>
@@ -64,13 +57,15 @@
             <textarea id="imported-text" readonly></textarea>
         </div>
 
-        <div class="form-group" style="max-width: 700px; margin: 20px auto;">
-            <label for="text-to-change">Cambiar Texto Mayúscula - Minúscula</label>
-            <textarea id="text-to-change" rows="3"></textarea>
-            <div class="align-buttons" style="margin-top: 10px;">
-                <button class="generate-btn" onclick="copyTransformedText()">Copiar Texto Cambiado</button>
+        <div class="form-group1" style="max-width: 700px; margin: 20px auto;">
+            <div class="align-buttons" style="margin-bottom: 10px;">
+                <button class="transform-btn" onclick="toUpperCase()">Todo en Mayúsculas</button>
+                <button class="transform-btn" onclick="toLowerCase()">Todo en Minúsculas</button>
+                <button class="transform-btn" onclick="toTitleCase()">Primera Letra en Mayúscula</button>
             </div>
-        </div>
+            <textarea id="text-to-change" rows="3" placeholder="Escribe aquí el texto a transformar..."></textarea>
+            <p id="copy-confirmation" class="copy-confirmation">¡Texto copiado!</p>
+        </div>                          
     </div>
 
     <div class="speech-section">

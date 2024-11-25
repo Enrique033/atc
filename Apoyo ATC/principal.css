@@ -40,7 +40,8 @@ body {
     transform: translateY(-3px);
 }
 .container {
-    max-width: 700px;
+    width: 60%;
+    max-width: 7000px;
     margin: 80px auto;
     padding: 30px;
     border-radius: 10px;
@@ -54,19 +55,134 @@ body {
     background-color: #495057;
     color: #f8f9fa;
 }
+
 h1 {
     text-align: center;
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 24px;
+    line-height: 1.3;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    /* Gradiente en el texto */
+    background: linear-gradient(90deg, #6c63ff, #2196f3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
+
+
 .form-group {
     margin-bottom: 20px;
 }
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+
+/* Contenedor Principal */
+.form-group1 {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
+/* Área de Texto */
+.form-group1 textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    resize: vertical;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: Arial, sans-serif;
+}
+
+.form-group1 textarea:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 6px rgba(108, 99, 255, 0.4);
+}
+
+/* Botones */
+.align-buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.transform-btn {
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #fff;
+    background-color: #6c63ff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.transform-btn:hover {
+    background-color: #5a52d1;
+    transform: translateY(-2px);
+}
+
+.transform-btn:active {
+    transform: translateY(0px);
+}
+
+/* Mensaje de Confirmación */
+.copy-confirmation {
+    display: none;
+    margin-top: 15px;
+    font-size: 15px;
+    color: #4caf50;
+    text-align: center;
+    font-weight: bold;
+    animation: fade-in-out 2s forwards;
+}
+
+/* Animación para el mensaje de confirmación */
+@keyframes fade-in-out {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+
+
+
+.center {
+    display: inline-block; /* Alinea el label en el centro */
+    text-align: center;
+    padding: 12px 24px;
+    margin: 20px auto;
+    font-size: 18px; /* Tamaño de fuente más grande para mejorar la visibilidad */
+    font-weight: bold; /* Para resaltar el label */
+    color: #333; /* Color de texto */
+    background-color: #f0f0f0; /* Fondo suave */
+    border: 2px solid #ddd; /* Borde fino */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para resaltar */
+    cursor: pointer; /* Cambia el cursor para etiquetas interactivas */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el cursor por encima */
+.center:hover {
+    background-color: #e2e2e2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+
 .form-group input,
 .form-group textarea {
     width: 100%;
@@ -86,10 +202,11 @@ textarea {
     resize: vertical; /* Permitir el redimensionamiento solo vertical */
 }
 #imported-text {
-    height: 300px; /* Ajustado el tamaño vertical */
-    width: 100%; /* Ajustado el tamaño horizontal */
+    height: 600px; /* Ajustado el tamaño vertical */
+    width: 97%; /* Ajustado el tamaño horizontal */
     font-size: 16px;
     white-space: pre-wrap; /* Mantener saltos de línea */
+    border-radius: 8px;
 }
 #imported-text.dark-mode {
     background: #6c757d;
@@ -105,6 +222,7 @@ textarea {
     font-weight: bold;
     background-color: #ffc107;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
 }
 .generate-btn.dark-mode {
     background-color: #007bff;
@@ -198,20 +316,39 @@ textarea {
     opacity: 1;
 }
 .file-import {
-    max-width: 700px;
+    width: auto;
+    max-width: 1000px;
     margin: 20px auto;
     padding: 10px;
-    background-color: #ffffff;
+    background-color: #7c7a7a;
     color: #333;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
 .file-import textarea {
-    height: 300px; /* Ajustado el tamaño vertical */
-    width: 100%; /* Ajustado el tamaño horizontal */
-    margin-top: 10px;
-    resize: vertical; /* Permitir el redimensionamiento solo vertical */
+    height: 300px; /* Ajusta la altura base */
+    width: 100%; /* Usa todo el ancho disponible */
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    resize: vertical; /* Permite redimensionar solo en la dirección vertical */
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* Efecto en el enfoque (focus) */
+.file-import textarea:focus {
+    border-color: #6c63ff; /* Cambia el color del borde */
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.3);
+    outline: none;
+}
+
 .sidebar-buttons {
     position: fixed;
     top: 100px;
