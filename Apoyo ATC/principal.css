@@ -17,6 +17,7 @@ body {
     display: flex;
     gap: 10px;
     z-index: 1000;
+    text-decoration: none;
 }
 .top-buttons button,
 .help-btn {
@@ -28,16 +29,19 @@ body {
     color: #fff;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
 }
 .top-buttons button.dark-mode,
 .help-btn.dark-mode {
     background-color: #343a40;
     color: #fff;
+    text-decoration: none;
 }
 .top-buttons button:hover,
 .help-btn:hover {
     background-color: #0056b3; /* Azul oscuro */
     transform: translateY(-3px);
+    text-decoration: none;
 }
 .container {
     width: 60%;
@@ -113,6 +117,7 @@ h1 {
     justify-content: space-around;
     gap: 10px;
     margin-bottom: 15px;
+    text-decoration: none;
 }
 
 .transform-btn {
@@ -155,32 +160,6 @@ h1 {
     90% { opacity: 1; }
     100% { opacity: 0; }
 }
-
-
-
-
-.center {
-    display: inline-block; /* Alinea el label en el centro */
-    text-align: center;
-    padding: 12px 24px;
-    margin: 20px auto;
-    font-size: 18px; /* Tamaño de fuente más grande para mejorar la visibilidad */
-    font-weight: bold; /* Para resaltar el label */
-    color: #333; /* Color de texto */
-    background-color: #f0f0f0; /* Fondo suave */
-    border: 2px solid #ddd; /* Borde fino */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para resaltar */
-    cursor: pointer; /* Cambia el cursor para etiquetas interactivas */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Efecto al pasar el cursor por encima */
-.center:hover {
-    background-color: #e2e2e2;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
 
 
 .form-group input,
@@ -255,47 +234,7 @@ textarea {
 .footer .social-icons a[title="Gmail"]:hover {
     color: #d93025; /* Color rojo para Gmail */
 }
-.help {
-    display: none;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 320px;
-    background: #343a40; /* Fondo gris oscuro */
-    color: #f8f9fa; /* Texto blanco */
-    border: 1px solid #495057; /* Borde gris oscuro */
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-.help h3 {
-    margin: 0 0 15px;
-    font-size: 18px;
-}
-.help p {
-    margin: 5px 0;
-    font-size: 14px;
-}
-.help button {
-    display: block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: #fff;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-.help button.dark-mode {
-    background-color: #495057;
-}
-.help button:hover {
-    background-color: #0056b3; /* Azul oscuro */
-    transform: translateY(-3px);
-}
+
 .notification {
     position: fixed;
     bottom: 20px;
@@ -342,60 +281,7 @@ textarea {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efecto en el enfoque (focus) */
-.file-import textarea:focus {
-    border-color: #6c63ff; /* Cambia el color del borde */
-    box-shadow: 0 0 5px rgba(108, 99, 255, 0.3);
-    outline: none;
-}
 
-.sidebar-buttons {
-    position: fixed;
-    top: 100px;
-    left: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 1000;
-}
-.sidebar-buttons a {
-    display: block;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    color: #fff;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-.sidebar-buttons a:nth-child(1) {
-    background-color: #007bff; /* Azul */
-}
-.sidebar-buttons a:nth-child(2) {
-    background-color: #28a745; /* Verde */
-}
-.sidebar-buttons a:nth-child(3) {
-    background-color: #ffc107; /* Amarillo */
-}
-.sidebar-buttons a:nth-child(4) {
-    background-color: #dc3545; /* Rojo */
-}
-.sidebar-buttons a:hover {
-    transform: translateY(-3px);
-}
-.sidebar-buttons a:nth-child(1):hover {
-    background-color: #0056b3; /* Azul oscuro */
-}
-.sidebar-buttons a:nth-child(2):hover {
-    background-color: #218838; /* Verde oscuro */
-}
-.sidebar-buttons a:nth-child(3):hover {
-    background-color: #e0a800; /* Amarillo oscuro */
-}
-.sidebar-buttons a:nth-child(4):hover {
-    background-color: #c82333; /* Rojo oscuro */
-}
 .speech-section {
     max-width: 700px;
     margin: 20px auto;
@@ -434,6 +320,7 @@ textarea {
     display: flex; /* Usar flexbox para alinear los botones */
     gap: 10px; /* Espacio entre los botones */
     margin-top: 20px; /* Espacio desde el borde superior */
+    text-decoration: none;
 }
 
 
@@ -447,6 +334,7 @@ textarea {
     color: #fff;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
 }
 
 .new-button-1:hover {
@@ -464,6 +352,7 @@ textarea {
     color: #fff;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
 }
 
 .new-button-2:hover {
@@ -484,6 +373,7 @@ textarea {
     display: inline-flex;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
 }
 
 .new-button-speech:hover,
@@ -511,4 +401,3 @@ textarea {
 }
 
 
-/*estilos para el dark mode*/

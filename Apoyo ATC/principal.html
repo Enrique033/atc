@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apoyo Gestión 123</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="manifest" href="/manifest.json"> <!-- Enlace al manifiesto -->
     <link rel="stylesheet" href="principal.css">
     <link rel="icon" href="img/logo.png" type="image/x-icon"> <!-- Cambia la ruta según la ubicación de tu imagen -->
 </head>
@@ -15,13 +14,12 @@
         <button class="logout-button" onclick="location.href='../index.html'">Cerrar Sesión</button> <!-- Botón Cerrar Sesión -->
     </div>
 
-
-    <!-- Añadir botones para redirigir a los proyectos de Apoyo ATC y CAB -->
-    <div class="project-buttons">
-        <button class="new-button-1" onclick="location.href='Calidad%20de%20Red/index.html'">Calidad de Red</button>
-        <button class="new-button-2" onclick="location.href='Lista%20de%20CAB/index.html'">Lista de CAB</button>
-        <button class="new-button-speech" onclick="location.href='speech/index.html'">Speechs</button> <!-- Botón Speechs -->
-    </div>    
+<!-- Añadir botones para redirigir a los proyectos de Apoyo ATC y CAB -->
+<div class="project-buttons">
+    <a href="Calidad%20de%20Red/index.html" class="new-button-1">Calidad de Red</a>
+    <a href="Lista%20de%20CAB/index.html" class="new-button-2">Lista de CAB</a>
+    <a href="speech/index.html" class="new-button-speech">Speechs</a> <!-- Enlace Speechs -->
+</div>
 
 
     <div class="container">
@@ -80,16 +78,6 @@
             <p>También puedes visualizar esta información ingresando a la sección “MI BITEL” de nuestra página web o descargando nuestra app MI BITEL.</p>
         </div>
     </div>
-
-    <div class="help">
-        <h3>Guía de Uso</h3>
-        <p><strong>Número:</strong> Ingrese el número del cliente.</p>
-        <p><strong>Consulta:</strong> Escriba la consulta del cliente.</p>
-        <p><strong>Respuesta:</strong> Escriba la respuesta que se dará al cliente.</p>
-        <p><strong>Código:</strong> Ingrese el código de llamada manualmente.</p>
-        <button onclick="toggleHelp()">Cerrar</button>
-    </div>
-
     <footer class="footer">
         <div>Desarrollado por © Elvis Sebastián 2024</div>
         <div class="social-icons">
